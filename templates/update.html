@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    
+    <div class="container my-4">
+        <h4>Add a ToDo</h4>
+        <!-- <div class="text-bg-secondary p-3">Add a ToDo</div> -->
+
+        <form action="/update/{{todo.sno}}" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">ToDo Title</label>
+                <input type="text" class="form-control" name="title" value ="{{todo.title}}" id="title" aria-describedby="emailHelp">
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label">ToDo Description</label>
+                <input type="text" class="form-control" value=" {{todo.desc}}" name="desc" id="desc">
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Update</button>
+        </form>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+{% endblock body %}
